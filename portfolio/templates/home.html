@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>This is homepage!</h1>
+    <a href="{% url 'blog:all_blogs' %}">Blog</a><br>
+    {% for project in projects %}
+
+    {{project.title}}<br>
+    {{project.description}}<br>
+    <img src={{project.image.url}} height="=200" width="150"></img><br>
+    {{project.url}}<br>
+
+    {% endfor %}
+
+{% endblock %}

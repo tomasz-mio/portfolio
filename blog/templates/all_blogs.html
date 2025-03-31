@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    Hello Blog!
+
+    {% for post in posts %}
+        <a href="{%url 'blog:detail' post.id %}"><h2>{{ post.title }}</h2></a>
+        <p>{{ post.date }}</p>
+        {{ post.content|truncatewords:30 }}
+    {% endfor %}
+{% endblock %}
